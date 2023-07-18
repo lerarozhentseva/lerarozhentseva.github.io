@@ -1,0 +1,219 @@
+h1.main-container__title {
+    width: 790px;
+    margin-top: 64px;
+    font-family: "Eczar", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    color: #023A6B;
+    line-height: 120%;
+    text-shadow: none;
+    margin-bottom: 50px;
+}
+
+.checkout {
+    padding: 32px 24px;
+    width: 290px;
+    border-radius: 16px;
+    background: #FFF;
+}
+
+.checkout p {
+    color: #023A6B;
+    font-family: "Eczar", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+/*.to-pay-btn {*/
+/*    height: 48px;*/
+/*    width: 100%;*/
+/*    padding: 16px 24px;*/
+/*    border-radius: 64px;*/
+/*    border: 2px solid #FFBD5C;*/
+/*    color: #023A6B;*/
+/*    font-family: "Open Sans", sans-serif;*/
+/*    font-size: 14px;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    line-height: 16px;*/
+/*    text-transform: uppercase;*/
+/*    background-color: transparent;*/
+/*}*/
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.ul-coffee li {
+    color: #023A6B;
+}
+
+.ul-price li {
+    color: #F73;
+    text-align: end;
+}
+
+.checkout__prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #F0F0F0;
+    padding-bottom: 16px;
+}
+
+ul li {
+    margin-top: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.checkout__delivery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.checkout__delivery li:first-child {
+    color: #023A6B;
+}
+
+.checkout__delivery li:last-child {
+    color: #F73;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item img {
+    width: 12%;
+}
+
+.item-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.item-controls__value {
+    border-radius: 24px;
+    border: 2px solid #FFBD5C;
+    background: #FEF2E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-controls__value input {
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    text-align: center;
+    margin: 12px 0;
+    padding-bottom: 5px;
+    padding-right: 12px;
+    color: #023A6B;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.item-controls__value input::-webkit-outer-spin-button, .item-controls__value input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.item-controls__value .minus {
+    margin-right: 10px;
+}
+
+.item-controls__value input:focus {
+    border: none;
+}
+
+.item-controls__value svg {
+    padding-bottom: 0;
+    margin: 0 10px;
+}
+
+.item-controls__value button {
+    background: transparent;
+    border: none;
+}
+
+.item-info {
+    margin-right: 200px;
+}
+
+.item-characters {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item-characters__value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 20px;
+    gap: 8px;
+}
+
+.line {
+    height: 2px;
+    background-color: #FFFFFF;
+    margin: 24px 0;
+}
+
+.delete {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.item-characters__value p {
+    color: #023A6B;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.to-pay-btn {
+    height: 48px;
+    padding: 16px 24px;
+    border-radius: 64px;
+    border: 2px solid #FFBD5C;
+    color: #023A6B;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: transparent;
+    width: 100%;
+}
+
+.minus, .plus {
+    cursor: pointer;
+}

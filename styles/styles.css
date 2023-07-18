@@ -10,12 +10,12 @@ header {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.container {
+.main-container {
     width: 1200px;
     margin: 0 auto;
 }
 
-header .header_container {
+header .header-container {
     display: flex;
     justify-content: space-between;
     padding: 24px 32px;
@@ -52,11 +52,11 @@ h1 span {
     justify-content: space-between;
 }
 
-.item {
+.coffee-catalog__item {
     height: 426px;
 }
 
-.item-title {
+.item-info__name {
     font-family: "Eczar", sans-serif;
     font-size: 32px;
     font-style: normal;
@@ -65,7 +65,7 @@ h1 span {
     color: #023A6B;
 }
 
-.item-price {
+.item-info__price {
     display: inline-block;
     border-radius: 16px;
     background: #F73;
@@ -84,7 +84,7 @@ h1 span {
     display: flex;
 }
 
-.radio-group {
+.coffee-catalog__radio-group {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -198,6 +198,7 @@ h1 span {
     line-height: 16px;
     text-transform: uppercase;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .info-btn {
@@ -211,15 +212,16 @@ h1 span {
     color: #023A6B;
     border-radius: 50%;
     border: none;
+    cursor: pointer;
 }
 
-.item img {
+.coffee-catalog__item img {
     max-width: 285px;
     width: 100%;
     margin-bottom: 10px;
 }
 
-header .header_logo {
+header .header-container__logo {
     display: flex;
     width: 232px;
     height: 48px;
@@ -229,14 +231,14 @@ header .header_logo {
     flex-shrink: 0;
 }
 
-header .header_shopping-cart {
+header .header-container__cart {
     display: flex;
     padding-right: 0;
     align-items: center;
     gap: 16px;
 }
 
-.header_shopping-cart p {
+.header-container__cart p {
     color: #023A6B;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
@@ -244,4 +246,8 @@ header .header_shopping-cart {
     font-weight: 700;
     line-height: 100%;
     text-transform: uppercase;
+}
+
+a.header-container__cart {
+    text-decoration: none;
 }
