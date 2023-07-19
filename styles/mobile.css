@@ -10,7 +10,7 @@
         padding-bottom: 16px !important;
     }
 
-    .header-container__cart p {
+    .header-container__cart div {
         display: none;
     }
 
@@ -146,7 +146,7 @@
     }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 400px) and (max-width: 500px){
     .coffee-catalog__item .rotate {
         right: 70px;
     }

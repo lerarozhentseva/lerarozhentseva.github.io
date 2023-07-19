@@ -249,7 +249,7 @@ header .header-container__cart {
     gap: 16px;
 }
 
-.header-container__cart p {
+.header-container__cart div {
     color: #023A6B;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
