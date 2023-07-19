@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
 header {
     width: 100%;
     background-color: #FFF;
@@ -251,3 +262,27 @@ header .header-container__cart {
 a.header-container__cart {
     text-decoration: none;
 }
+
+.coffee-catalog__item {
+    position: relative;
+}
+
+@keyframes arabicCircle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    width: 120px !important;
+    position: absolute;
+    top: 115px;
+    right: 0;
+    transform-origin: center;
+    animation: arabicCircle 4s linear infinite;
+}
+
+

@@ -32,8 +32,6 @@
 }
 
 .popup-info__item div {
-    display: inline-block;
-    border-radius: 16px;
     background: #F73;
     color: #FFF;
     font-family: "Eczar", sans-serif;
@@ -44,6 +42,7 @@
     padding: 3px 5px;
     align-self: flex-start;
     margin-left: 5px;
+    border-radius: 16px;
 }
 
 .popup .popup-info img {

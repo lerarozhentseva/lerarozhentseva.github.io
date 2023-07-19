@@ -1,0 +1,153 @@
+@media (min-width: 320px) and (max-width: 500px) {
+    .main-container, .header-container {
+        max-width: 100%;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .header-container {
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+    }
+
+    .header-container__cart p {
+        display: none;
+    }
+
+    .header-container__logo {
+        max-width: 60%;
+    }
+
+    .header-container__cart img {
+        max-width: 80%;
+    }
+
+    .header-container__logo img {
+        max-width: 60%;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 130%;
+        width: auto;
+        margin-top: 32px;
+        text-shadow: none;
+    }
+
+    .coffee-catalog {
+        margin: 40px 0;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .coffee-catalog__item:not(:last-child) {
+        border-bottom: 2px solid #FFFFFF;
+    }
+
+    .coffee-catalog__item {
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    .desktop-cart-logo {
+        display: none;
+    }
+
+    .mobile-cart-logo {
+        display: block;
+    }
+
+    h1.main-container__title {
+        width: auto;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .cart {
+        flex-direction: column;
+    }
+
+    .checkout {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .checkout p {
+        font-size: 20px;
+    }
+
+    .item img {
+        width: 20%;
+        margin-right: 16px;
+    }
+
+    .item-info {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .item .item-controls {
+        margin-left: 80px;
+        margin-top: 10px;
+    }
+
+    .mobile-cart-logo {
+        display: block;
+    }
+
+    .cart .item {
+        flex-wrap: wrap;
+    }
+
+    .cart .item__characteristics {
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+
+    .item-info__name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    .item-characters {
+        margin-top: 0;
+    }
+
+    .item-info {
+        margin-bottom: 0;
+    }
+
+    .cart__items {
+        margin-bottom: 40px;
+    }
+
+    .popup {
+        position: fixed;
+        max-width: 100%;
+        display: none;
+        max-height: 100%;
+        border-radius: initial !important;
+    }
+
+    .popup .popup-info img {
+        max-width: 45%;
+    }
+
+    .popup .uls {
+        display: flex;
+        padding: 0;
+    }
+
+    .coffee-catalog__item .rotate {
+        right: 50px;
+    }
+}
+
+@media (min-width: 400px) {
+    .coffee-catalog__item .rotate {
+        right: 70px;
+    }
+}
