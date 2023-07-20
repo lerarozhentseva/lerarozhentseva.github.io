@@ -144,6 +144,12 @@
     .coffee-catalog__item .rotate {
         right: 50px;
     }
+
+    .cart-item-count {
+        display: block !important;
+        right: 43px !important;
+        top: 7px !important;
+    }
 }
 
 @media (min-width: 400px) and (max-width: 500px){
