@@ -1,10 +1,12 @@
 @media (min-width: 320px) and (max-width: 500px) {
+    /*main content*/
     .main-container, .header-container {
         max-width: 100%;
         padding-left: 24px !important;
         padding-right: 24px !important;
     }
 
+    /*header*/
     .header-container {
         padding-top: 16px !important;
         padding-bottom: 16px !important;
@@ -26,6 +28,21 @@
         max-width: 60%;
     }
 
+    .desktop-cart-logo {
+        display: none;
+    }
+
+    .mobile-cart-logo {
+        display: block;
+    }
+
+    .cart-item-count {
+        display: block !important;
+        right: 43px !important;
+        top: 7px !important;
+    }
+
+    /*titles*/
     h1 {
         font-size: 24px;
         font-weight: 700;
@@ -35,11 +52,22 @@
         text-shadow: none;
     }
 
+    h1.main-container__title {
+        width: auto;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    /*catalog of items on main page*/
     .coffee-catalog {
         margin: 40px 0;
         grid-template-columns: 1fr;
         justify-content: center;
         gap: 25px;
+    }
+
+    .coffee-catalog__item .rotate {
+        right: 50px;
     }
 
     .coffee-catalog__item:not(:last-child) {
@@ -51,20 +79,21 @@
         padding-bottom: 25px;
     }
 
-    .desktop-cart-logo {
-        display: none;
+    .item-info__name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
     }
 
-    .mobile-cart-logo {
-        display: block;
+    .item-characters {
+        margin-top: 0;
     }
 
-    h1.main-container__title {
-        width: auto;
-        font-size: 32px;
-        margin-bottom: 30px;
+    .item-info {
+        margin-bottom: 0;
     }
 
+    /*shopping cart*/
     .cart {
         flex-direction: column;
     }
@@ -93,10 +122,6 @@
         margin-top: 10px;
     }
 
-    .mobile-cart-logo {
-        display: block;
-    }
-
     .cart .item {
         flex-wrap: wrap;
     }
@@ -106,24 +131,11 @@
         flex-basis: auto;
     }
 
-    .item-info__name {
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 120%;
-    }
-
-    .item-characters {
-        margin-top: 0;
-    }
-
-    .item-info {
-        margin-bottom: 0;
-    }
-
     .cart__items {
         margin-bottom: 40px;
     }
 
+    /*popup*/
     .popup {
         position: fixed;
         max-width: 100%;
@@ -139,16 +151,6 @@
     .popup .uls {
         display: flex;
         padding: 0;
-    }
-
-    .coffee-catalog__item .rotate {
-        right: 50px;
-    }
-
-    .cart-item-count {
-        display: block !important;
-        right: 43px !important;
-        top: 7px !important;
     }
 }
 

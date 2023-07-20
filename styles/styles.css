@@ -1,29 +1,37 @@
+/*reset browser styles*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    background-color: #FEF2E8;
+}
+
+/*animations*/
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
 
-body {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+@keyframes arabicCircle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
+/*header*/
 header {
     width: 100%;
     background-color: #FFF;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.main-container {
-    width: 1200px;
-    margin: 0 auto;
 }
 
 header .header-container {
@@ -34,10 +42,38 @@ header .header-container {
     margin: 0 auto;
 }
 
-body {
-    background-color: #FEF2E8;
+header .header-container__logo {
+    display: flex;
+    width: 232px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
 }
 
+header .header-container__cart {
+    display: flex;
+    padding-right: 0;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-container__cart div {
+    color: #023A6B;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+a.header-container__cart {
+    text-decoration: none;
+}
+
+/*titles*/
 h1 {
     width: 790px;
     margin-top: 64px;
@@ -54,6 +90,12 @@ h1 span {
     color: #F73;
 }
 
+/*main container*/
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
 .coffee-catalog {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -65,6 +107,13 @@ h1 span {
 
 .coffee-catalog__item {
     height: 426px;
+    position: relative;
+}
+
+.coffee-catalog__item img {
+    max-width: 285px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .item-info__name {
@@ -95,6 +144,7 @@ h1 span {
     display: flex;
 }
 
+/*replacing default styles for Radio*/
 .coffee-catalog__radio-group {
     display: flex;
     gap: 20px;
@@ -152,7 +202,7 @@ h1 span {
     opacity: 0;
 }
 
-
+/*replacing default styles for Checkbox*/
 .checkbox-input {
     display: none;
 }
@@ -188,6 +238,7 @@ h1 span {
     background-color: #ff7733;
 }
 
+/*default buttons*/
 .btn-group {
     margin-top: 16px;
     display: flex;
@@ -236,56 +287,7 @@ h1 span {
     cursor: pointer;
 }
 
-.coffee-catalog__item img {
-    max-width: 285px;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-header .header-container__logo {
-    display: flex;
-    width: 232px;
-    height: 48px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-header .header-container__cart {
-    display: flex;
-    padding-right: 0;
-    align-items: center;
-    gap: 16px;
-}
-
-.header-container__cart div {
-    color: #023A6B;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    text-transform: uppercase;
-}
-
-a.header-container__cart {
-    text-decoration: none;
-}
-
-.coffee-catalog__item {
-    position: relative;
-}
-
-@keyframes arabicCircle {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
+/*rotate block*/
 .rotate {
     width: 120px !important;
     position: absolute;
