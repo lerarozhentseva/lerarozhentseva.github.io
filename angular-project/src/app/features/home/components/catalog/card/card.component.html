@@ -1,0 +1,26 @@
+<div class="coffee-catalog__item">
+  <img [src]="product?.img" alt="coffee-image"
+       class="coffee-catalog-item__image latte-image">
+  <div *ngIf="product?.rotateImg">
+    <img [src]="product.rotateImg" alt="rotate" class="coffee-catalog-item__image rotate">
+  </div>
+  <div class="item-info">
+    <h2 class="item-info__name">{{product?.name}}</h2>
+    <div class="item-info__price">${{product?.price}}</div>
+  </div>
+  <div class="coffee-catalog__radio-group">
+    <input type="radio" [id]="product?.radioId1" [name]="product?.radioName" class="radio-input" checked>
+    <label [for]="product?.radioId1" class="radio-label">250ml</label>
+
+    <input type="radio" [id]="product?.radioId2" [name]="product?.radioName" class="radio-input">
+    <label [for]="product?.radioId2" class="radio-label">500ml</label>
+  </div>
+  <div class="checkbox-group">
+    <input type="checkbox" [id]="product?.checkBoxName" class="checkbox-input">
+    <label [for]="product?.checkBoxName" class="checkbox-label">add sugar</label>
+  </div>
+  <div class="btn-group">
+    <app-button textBtn="add to cart"></app-button>
+    <button type="button" class="info-btn">i</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  width: 790px;
+  margin-top: 64px;
+  text-shadow: 2px 0 3px rgba(0, 0, 0, 0.25);
+  font-family: "Eczar", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  color: #023A6B;
+  line-height: 120%;
+}
+
+h1 span {
+  color: #F73;
+}
