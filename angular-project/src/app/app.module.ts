@@ -4,15 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CoreModule} from "./core/core.module";
 import {HomeModule} from "./features/home/home.module";
+import {ShopCartModule} from "./features/shop-cart/shop-cart.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule, HomeModule
+    CoreModule, HomeModule, ShopCartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

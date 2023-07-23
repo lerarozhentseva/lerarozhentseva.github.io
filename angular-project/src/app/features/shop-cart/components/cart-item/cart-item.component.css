@@ -1,0 +1,140 @@
+.item-info__name {
+  font-family: "Eczar", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  color: #023A6B;
+}
+
+.item-info__price {
+  display: inline-block;
+  border-radius: 16px;
+  background: #F73;
+  color: #FFF;
+  font-family: "Eczar", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  padding: 3px 5px;
+  align-self: flex-start;
+  margin-left: 5px;
+}
+
+.item-info {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item img {
+  width: 12%;
+}
+
+.item-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.item-controls__value {
+  border-radius: 24px;
+  border: 2px solid #FFBD5C;
+  background: #FEF2E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-controls__value input {
+  background-color: transparent;
+  border: none;
+  width: 45px;
+  text-align: center;
+  margin: 12px 0;
+  padding-bottom: 5px;
+  padding-right: 12px;
+  color: #023A6B;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.item-controls__value input::-webkit-outer-spin-button, .item-controls__value input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.item-controls__value .minus {
+  margin-right: 10px;
+}
+
+.item-controls__value input:focus {
+  border: none;
+}
+
+.item-controls__value svg {
+  padding-bottom: 0;
+  margin: 0 10px;
+}
+
+.item-controls__value button {
+  background: transparent;
+  border: none;
+}
+
+.item-info {
+  margin-right: 200px;
+}
+
+.item-characters {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.item-characters__value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 20px;
+  gap: 8px;
+}
+
+.line {
+  height: 2px;
+  background-color: #FFFFFF;
+  margin: 24px 0;
+}
+
+.delete {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.delete:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.item-characters__value p {
+  color: #023A6B;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.minus, .plus {
+  cursor: pointer;
+}

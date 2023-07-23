@@ -1,0 +1,31 @@
+<section class="main-container">
+  <h1 class="main-container__title">
+    Shopping Cart
+  </h1>
+  <div class="cart">
+    <div class="cart__items">
+      <app-cart-item *ngFor="let cartProduct of cartProducts" [productCart]="cartProduct"></app-cart-item>
+    </div>
+    <div class="checkout">
+      <p>Checkout</p>
+      <div class="checkout__prices">
+        <ul class="checkout-prices__value">
+          <li>Extra Latte, 250 ml</li>
+          <li>Cappuccino, 250 ml</li>
+          <li>Delivery</li>
+        </ul>
+        <ul class="checkout-prices__price">
+          <li>$8.99</li>
+          <li>2X $9.99</li>
+          <li>$5</li>
+        </ul>
+      </div>
+      <ul class="checkout__delivery">
+        <li>Delivery</li>
+        <li>$33.97</li>
+      </ul>
+      <app-button textBtn="to pay"></app-button>
+<!--      <button type="button" class="to-pay-btn">to pay</button>-->
+    </div>
+  </div>
+</section>

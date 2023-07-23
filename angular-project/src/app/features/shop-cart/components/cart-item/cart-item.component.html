@@ -1,0 +1,91 @@
+<div class="item">
+  <img [src]="productCart?.img" alt="coffee">
+  <div class="item__characteristics">
+    <div>
+      <div class="item-info">
+        <h2 class="item-info__name">{{productCart?.name}}</h2>
+        <div class="item-info__price">${{productCart?.price}}</div>
+      </div>
+      <div class="item-characters">
+        <div class="item-characters__value">
+          <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_847_567)">
+              <path d="M0 6.5H16V12.5C16 16.9183 12.4183 20.5 8 20.5C3.58172 20.5 0 16.9183 0 12.5V6.5Z"
+                    fill="#023A6B"/>
+              <path d="M15 10.5H17C18.1046 10.5 19 11.3954 19 12.5V12.5C19 13.6046 18.1046 14.5 17 14.5H15"
+                    stroke="#023A6B" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4 4.5H12" stroke="#FF7733" stroke-width="2"
+                    stroke-linecap="round"/>
+              <path d="M7 1.5H9" stroke="#FF7733" stroke-width="2"
+                    stroke-linecap="round"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_847_567">
+                <rect width="20" height="20" fill="white" transform="translate(0 0.5)"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <p>{{productCart?.size}}</p>
+        </div>
+        <div class="item-characters__value">
+          <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3.95397 11.1419C4.59572 10.7481 5.40427 10.7481 6.04603 11.1419L8.04603 12.3692C8.63876 12.7329 9 13.3784 9 14.0738V15.9262C9 16.6216 8.63876 17.2671 8.04603 17.6308L6.04603 18.8581C5.40427 19.2519 4.59573 19.2519 3.95397 18.8581L1.95397 17.6308C1.36124 17.2671 1 16.6216 1 15.9262V14.0738C1 13.3784 1.36124 12.7329 1.95397 12.3692L3.95397 11.1419Z"
+              fill="#023A6B"/>
+            <path
+              d="M8.95397 3.14188C9.59572 2.74808 10.4043 2.74808 11.046 3.14188L13.046 4.36916C13.6388 4.73287 14 5.37838 14 6.0738V7.9262C14 8.62162 13.6388 9.26713 13.046 9.63084L11.046 10.8581C10.4043 11.2519 9.59573 11.2519 8.95397 10.8581L6.95397 9.63084C6.36124 9.26713 6 8.62162 6 7.9262V6.0738C6 5.37838 6.36124 4.73287 6.95397 4.36916L8.95397 3.14188Z"
+              fill="#023A6B"/>
+            <path
+              d="M13.954 11.1419C14.5957 10.7481 15.4043 10.7481 16.046 11.1419L18.046 12.3692C18.6388 12.7329 19 13.3784 19 14.0738V15.9262C19 16.6216 18.6388 17.2671 18.046 17.6308L16.046 18.8581C15.4043 19.2519 14.5957 19.2519 13.954 18.8581L11.954 17.6308C11.3612 17.2671 11 16.6216 11 15.9262V14.0738C11 13.3784 11.3612 12.7329 11.954 12.3692L13.954 11.1419Z"
+              fill="#FF7733"/>
+          </svg>
+          <p>{{productCart?.sugar}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="item-controls">
+    <div class="item-controls__value">
+      <button type="button" class="minus" id="minus">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+             fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0 8C0 7.44772 0.447715 7 1 7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L1 9C0.447715 9 0 8.55228 0 8Z"
+                fill="#023A6B"/>
+        </svg>
+      </button>
+      <input value="1" type="number" id="input" min="1" max="999">
+      <button type="button" class="plus" id="plus">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+             fill="none">
+          <g clip-path="url(#clip0_902_1018)">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9 1C9 0.447715 8.55229 0 8 0C7.44772 0 7 0.447715 7 1V7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H7V15C7 15.5523 7.44772 16 8 16C8.55229 16 9 15.5523 9 15V9H15C15.5523 9 16 8.55229 16 8C16 7.44772 15.5523 7 15 7H9V1Z"
+                  fill="#023A6B"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_902_1018">
+              <rect width="16" height="16" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+    </div>
+    <button type="button" class="delete">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <g id="Icon">
+          <path id="Base" fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 7H20V19C20 21.2091 18.2091 23 16 23H8C5.79086 23 4 21.2091 4 19V7ZM9.5 10C9.77614 10 10 10.2239 10 10.5V18.5C10 18.7761 9.77614 19 9.5 19C9.22386 19 9 18.7761 9 18.5V10.5C9 10.2239 9.22386 10 9.5 10ZM15 10.5C15 10.2239 14.7761 10 14.5 10C14.2239 10 14 10.2239 14 10.5V18.5C14 18.7761 14.2239 19 14.5 19C14.7761 19 15 18.7761 15 18.5V10.5Z"
+                fill="#FF7733"/>
+          <path id="Cup" fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 1C10.3431 1 9 2.34315 9 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6H9H10H14H15H20C20.5523 6 21 5.55228 21 5C21 4.44772 20.5523 4 20 4H15C15 2.34315 13.6569 1 12 1ZM13 4C13 3.44772 12.5523 3 12 3C11.4477 3 11 3.44772 11 4H13Z"
+                fill="#FF7733"/>
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+<div class="line"></div>

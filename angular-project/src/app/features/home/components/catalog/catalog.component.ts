@@ -1,7 +1,4 @@
 import {Component} from '@angular/core';
-import {products as data} from "../../../../../assets/data/products";
-import {IProduct} from "../../../../../assets/models/product";
-
 
 @Component({
   selector: 'app-catalog',
@@ -10,7 +7,6 @@ import {IProduct} from "../../../../../assets/models/product";
 })
 
 export class CatalogComponent {
-  // products: IProduct[] = data;
   products: any = [{
     "name": "Extra Latte",
     "price": 8.99,
