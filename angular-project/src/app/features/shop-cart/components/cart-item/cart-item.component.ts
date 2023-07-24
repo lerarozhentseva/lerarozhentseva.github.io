@@ -7,4 +7,15 @@ import {Component, Input} from '@angular/core';
 })
 export class CartItemComponent {
   @Input() productCart?: any;
+  inputItemsValue: number = 1;
+
+  onIncrementItems () {
+    this.inputItemsValue++;
+  }
+
+  onDecrementItems () {
+    if(this.inputItemsValue > 0){
+      this.inputItemsValue--;
+    }
+  }
 }

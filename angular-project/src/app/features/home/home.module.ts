@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CatalogComponent} from "./components/catalog/catalog.component";
 import {CardComponent} from "./components/catalog/card/card.component";
 import {HomeComponent} from "./home.component";
 import {HomeRoutingModule} from "./home-routing.module";
-import {BrowserModule} from "@angular/platform-browser";
 import {CoreModule} from "../../core/core.module";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   imports: [
     HomeRoutingModule,
-    BrowserModule,
-    CoreModule
+    CoreModule, FormsModule, CommonModule
   ],
   declarations: [
     CatalogComponent,
@@ -20,4 +20,5 @@ import {CoreModule} from "../../core/core.module";
     HomeComponent
   ],
 })
-export class HomeModule { }
+export class HomeModule {
+}

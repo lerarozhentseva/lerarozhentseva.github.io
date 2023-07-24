@@ -13,7 +13,6 @@ export class CatalogComponent {
     "quantity": "1",
     "size": "250ml",
     "sugar": "false",
-    "image": "",
     "img": "assets/img/latte-without-arabic.svg",
     "rotateImg": "assets/icons/rotate-arabic.svg",
     "radioName": "Late-ML",

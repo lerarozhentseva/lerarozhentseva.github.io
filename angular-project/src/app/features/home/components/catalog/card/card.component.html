@@ -9,18 +9,18 @@
     <div class="item-info__price">${{product?.price}}</div>
   </div>
   <div class="coffee-catalog__radio-group">
-    <input type="radio" [id]="product?.radioId1" [name]="product?.radioName" class="radio-input" checked>
+    <input type="radio" [(ngModel)]="radioValue"  [id]="product?.radioId1" [name]="product?.radioName" class="radio-input" value="250ml" [checked]="product.radioValue === '250ml'">
     <label [for]="product?.radioId1" class="radio-label">250ml</label>
 
-    <input type="radio" [id]="product?.radioId2" [name]="product?.radioName" class="radio-input">
+    <input type="radio" [(ngModel)]="radioValue"  [id]="product?.radioId2" [name]="product?.radioName" class="radio-input" value="500ml" [checked]="product.radioValue === '500ml'">
     <label [for]="product?.radioId2" class="radio-label">500ml</label>
   </div>
   <div class="checkbox-group">
-    <input type="checkbox" [id]="product?.checkBoxName" class="checkbox-input">
+    <input type="checkbox" [(ngModel)]="checkBoxValue"  [id]="product?.checkBoxName" class="checkbox-input">
     <label [for]="product?.checkBoxName" class="checkbox-label">add sugar</label>
   </div>
   <div class="btn-group">
-    <app-button textBtn="add to cart"></app-button>
+    <app-button textBtn="add to cart" (click)="getItem(product)"></app-button>
     <button type="button" class="info-btn">i</button>
   </div>
 </div>
