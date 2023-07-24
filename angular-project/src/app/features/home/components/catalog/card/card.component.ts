@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -10,14 +10,31 @@ export class CardComponent {
   radioValue: string = '';
   checkBoxValue: boolean = false;
 
-  public getItem (product: any) {
+  @Output() itemAdded = new EventEmitter<void>();
+
+  public reload() {
+    window.location.reload();
+  }
+
+  public getItem(product: any) {
+    const uniqueId = crypto.randomUUID();
     let object = {
       name: product.name,
       price: product.price,
       size: this.radioValue,
+      quantity: 1,
       sugar: this.checkBoxValue,
       img: product.img,
+      id: uniqueId
+    };
+    let cartItems = [];
+    const localStorageData = localStorage.getItem('cartItems');
+    if (localStorageData) {
+      cartItems = JSON.parse(localStorageData);
     }
-    console.log(object);
+    cartItems.push(object);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    this.itemAdded.emit();
+    this.reload();
   }
 }
