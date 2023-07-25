@@ -6,5 +6,6 @@ export interface IProduct {
   radioName: string;
   radioId1: string;
   radioId2: string;
-  checkBoxName: string
+  checkBoxName: string;
+  id: string
 }

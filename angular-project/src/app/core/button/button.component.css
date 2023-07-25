@@ -16,8 +16,8 @@
 }
 
 .add-to-cart-btn:hover {
-  border: 2px solid #FFFFFF;
-  color: #FFBD5C;
+  color: #023A6B;
+  background-color: #FFBD5C;
 }
 
 .add-to-cart-btn:active {
