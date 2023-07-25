@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {CartService} from "../../../../../services/cart.service";
 
 @Component({
   selector: 'app-card',
@@ -11,10 +12,7 @@ export class CardComponent {
   checkBoxValue: boolean = false;
 
   @Output() itemAdded = new EventEmitter<void>();
-
-  public reload() {
-    window.location.reload();
-  }
+  constructor(private cartService: CartService) {}
 
   public getItem(product: any) {
     const uniqueId = crypto.randomUUID();
@@ -27,14 +25,16 @@ export class CardComponent {
       img: product.img,
       id: uniqueId
     };
+
     let cartItems = [];
     const localStorageData = localStorage.getItem('cartItems');
     if (localStorageData) {
       cartItems = JSON.parse(localStorageData);
     }
-    cartItems.push(object);
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    this.itemAdded.emit();
-    this.reload();
+    if (object.size) {
+      cartItems.push(object);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      this.cartService.itemAdded.next();
+    }
   }
 }

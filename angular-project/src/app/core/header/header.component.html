@@ -5,11 +5,11 @@
       <img src="assets/icons/logo-text.svg" alt="logo-text">
     </a>
     <a routerLink="shop-cart" class="header-container__cart">
-      <img src="assets/icons/empty-cart.svg" alt="empty-cart">
-      <div>Shopping <br/> Cart</div>
-      <div class="cart-item-count"
-           style="font-size: 17px; font-weight: 900; position: relative; right: 141px; top: 7px; color: #ff7733;">{{totalCountOfItems}}
+      <div class="count">
+        <span>{{totalCountOfItems}}</span>
+        <img src="assets/icons/empty-cart.svg" alt="empty-cart">
       </div>
+      <div>Shopping <br/> Cart</div>
     </a>
   </div>
 </header>

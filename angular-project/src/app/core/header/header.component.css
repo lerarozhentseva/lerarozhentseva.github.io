@@ -42,3 +42,17 @@ header .header-container__cart {
 a.header-container__cart {
   text-decoration: none;
 }
+
+.count {
+  position: relative;
+}
+
+.count span {
+  left: 50%;
+  top: 65%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  font-size: 17px;
+  font-weight: 900;
+  color: #ff7733;
+}

@@ -6,6 +6,9 @@ import {CoreModule} from "./core/core.module";
 import {HomeModule} from "./features/home/home.module";
 import {ShopCartModule} from "./features/shop-cart/shop-cart.module";
 import {FormsModule} from "@angular/forms";
+import {CounterService} from "./services/counter.service";
+import {HttpClientModule} from "@angular/common/http";
+import {CartService} from "./services/cart.service";
 
 @NgModule({
   declarations: [
@@ -14,9 +17,9 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule, HomeModule, ShopCartModule, FormsModule
+    CoreModule, HomeModule, ShopCartModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [CounterService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
