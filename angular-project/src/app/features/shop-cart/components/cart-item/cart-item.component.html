@@ -26,9 +26,9 @@
               </clipPath>
             </defs>
           </svg>
-          <p>{{productCart?.size}}</p>
+          <p>{{productCart?.size}}ML</p>
         </div>
-        <div class="item-characters__value">
+        <div class="item-characters__value" *ngIf="productCart?.sugar">
           <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path
@@ -41,7 +41,7 @@
               d="M13.954 11.1419C14.5957 10.7481 15.4043 10.7481 16.046 11.1419L18.046 12.3692C18.6388 12.7329 19 13.3784 19 14.0738V15.9262C19 16.6216 18.6388 17.2671 18.046 17.6308L16.046 18.8581C15.4043 19.2519 14.5957 19.2519 13.954 18.8581L11.954 17.6308C11.3612 17.2671 11 16.6216 11 15.9262V14.0738C11 13.3784 11.3612 12.7329 11.954 12.3692L13.954 11.1419Z"
               fill="#FF7733"/>
           </svg>
-          <p>{{productCart?.sugar}}</p>
+          <p>Sugar</p>
         </div>
       </div>
     </div>
@@ -88,4 +88,3 @@
     </button>
   </div>
 </div>
-<div class="line"></div>

@@ -8,7 +8,7 @@ import {CartService} from "../../../../../services/cart.service";
 })
 export class CardComponent {
   @Input() product?: any;
-  radioValue: string = '250ml';
+  radioValue: string = '250';
   checkBoxValue: boolean = false;
 
   @Output() itemAdded = new EventEmitter<void>();
