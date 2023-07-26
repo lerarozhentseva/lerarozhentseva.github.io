@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import {CounterService} from "./services/counter.service";
 import {HttpClientModule} from "@angular/common/http";
 import {CartService} from "./services/cart.service";
+import {ShopcartService} from "./services/shopcart.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {CartService} from "./services/cart.service";
     AppRoutingModule,
     CoreModule, HomeModule, ShopCartModule, FormsModule, HttpClientModule
   ],
-  providers: [CounterService, CartService],
+  providers: [CounterService, CartService, ShopcartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

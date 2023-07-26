@@ -4,25 +4,21 @@
   </h1>
   <div class="cart">
     <div class="cart__items">
-      <app-cart-item *ngFor="let cartProduct of cartProducts" [productCart]="cartProduct"></app-cart-item>
+      <app-cart-item *ngFor="let cartProduct of cartProducts" [productCart]="cartProduct" (incrementEvent)="onCartItemIncremented($event)"></app-cart-item>
     </div>
     <div class="checkout">
       <p>Checkout</p>
-      <div class="checkout__prices">
+      <div class="checkout__prices" *ngFor="let item of totalPrices">
         <ul class="checkout-prices__value">
-          <li>Extra Latte, 250 ml</li>
-          <li>Cappuccino, 250 ml</li>
-          <li>Delivery</li>
+          <li>{{ item?.name }}</li>
         </ul>
         <ul class="checkout-prices__price">
-          <li>$8.99</li>
-          <li>2X $9.99</li>
-          <li>$5</li>
+          <li>{{item?.quantity}}X {{item?.price | currency }}</li>
         </ul>
       </div>
       <ul class="checkout__delivery">
         <li>Delivery</li>
-        <li>$33.97</li>
+        <li>{{ getTotalSumWithDelivery() | currency }}</li>
       </ul>
       <app-button textBtn="to pay"></app-button>
     </div>

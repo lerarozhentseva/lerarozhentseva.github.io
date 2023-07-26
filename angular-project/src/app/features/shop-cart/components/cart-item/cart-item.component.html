@@ -48,7 +48,7 @@
   </div>
   <div class="item-controls">
     <div class="item-controls__value">
-      <button type="button" class="minus" id="minus" (click)="onDecrementItems()">
+      <button type="button" class="minus" id="minus" (click)="onDecrementItems(productCart?.id)">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
              fill="none">
           <path fill-rule="evenodd" clip-rule="evenodd"
@@ -73,7 +73,7 @@
         </svg>
       </button>
     </div>
-    <button type="button" class="delete">
+    <button type="button" class="delete" (click)="onDeleteItem(productCart?.id)">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
            xmlns="http://www.w3.org/2000/svg">
         <g id="Icon">

@@ -13,7 +13,6 @@ export class CardComponent {
 
   @Output() itemAdded = new EventEmitter<void>();
   constructor(private cartService: CartService) {}
-
   public getItem(product: any) {
     const uniqueId = crypto.randomUUID();
     let object = {
