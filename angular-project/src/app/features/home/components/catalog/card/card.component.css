@@ -197,7 +197,7 @@
 }
 
 .popup .popup-info {
-  margin: 48px 40px;
+  margin: 15px 40px 48px 40px;
 }
 
 .popup-info__item {
@@ -214,6 +214,7 @@
   color: #023A6B;
   font-weight: 700;
   line-height: 120%;
+  margin-bottom: 0;
 }
 
 .popup-info__item div {
