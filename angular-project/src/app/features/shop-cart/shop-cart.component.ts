@@ -11,7 +11,7 @@ import {CounterService} from "../../services/counter.service";
 export class ShopCartComponent implements OnInit{
   cartProducts: any[] = [];
   totalPrices: any[] = [];
-  constructor(private cartService: ShopcartService, private counterService: CounterService) {}
+  constructor(private cartService: ShopcartService) {}
   customButtonClass = 'custom-button';
 
   ngOnInit() {
@@ -74,6 +74,17 @@ export class ShopCartComponent implements OnInit{
       this.cartProducts = this.cartService.getCartItems();
       this.calculateTotalPrices();
     }
+  }
+
+  onCartItemDecremented(id: string) {
+      const localStorageData = localStorage.getItem('cartItems');
+      const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
+      const productDetails = cartProducts.find((product: any) => product.id === id);
+      productDetails.quantity--;
+      console.log(productDetails);
+      localStorage.setItem('cartItems', JSON.stringify(cartProducts));
+      this.cartProducts = this.cartService.getCartItems();
+      this.calculateTotalPrices();
   }
 
   addItem(product: any) {

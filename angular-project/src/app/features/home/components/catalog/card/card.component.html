@@ -21,6 +21,30 @@
   </div>
   <div class="btn-group">
     <app-button textBtn="add to cart" (click)="getItem(product)"></app-button>
-    <button type="button" class="info-btn">i</button>
-  </div>
+    <button type="button" class="info-btn" (click)="openPopup()">i</button>
+    <aside id="popup" *ngIf="isPopupOpen" [@fadeInOut] class="popup">
+      <div class="popup-info">
+        <div class="popup-info__item">
+          <h2>{{ product?.name }}</h2>
+          <div>${{ product?.price }}</div>
+        </div>
+        <img [src]="product?.img" alt="coffee">
+        <div class="line"></div>
+        <ul>
+          <li *ngFor="let detail of getRegularDetails()">
+            <h4>{{ detail.key }}</h4>
+            <p>{{ detail.value }}</p>
+          </li>
+        </ul>
+        <div class="line"></div>
+        <ul>
+          <li *ngFor="let detail of getLastTwoDetails()">
+            <h4>{{ detail.key }}</h4>
+            <p>{{ detail.value }}mcg</p>
+          </li>
+        </ul>
+        <app-button textBtn="Cool, got it" (click)="closePopup()"></app-button>
+      </div>
+    </aside>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "id": "1",
       "name": "Extra Latte",
       "price": 8.99,
       "quantity": "1",
@@ -11,29 +12,63 @@
       "radioName": "Late-ML",
       "radioId1": "Late-option1",
       "radioId2": "Late-option2",
-      "checkBoxName": "Late-ML-myCheckbox"
-    }, {
+      "checkBoxName": "Late-ML-myCheckbox",
+      "details": {
+        "calories": 65,
+        "totalFat": 2.4,
+        "cholesterol": 9.6,
+        "sodium": 55,
+        "totalCarbohydrate": 6.8,
+        "protein": 4.2,
+        "vitaminD": 1.4,
+        "cancium": 158
+      }
+    },
+    {
+      "id": "2",
       "name": "Cappuccino",
       "price": 9.99,
       "quantity": "1",
       "size": "500",
       "sugar": "false",
-      "img": "assets/img/cappuccino.jpg",
+      "img": "assets/img/cappuccino.svg",
       "radioName": "Cappuccino-ML",
       "radioId1": "Cappuccino-option1",
       "radioId2": "Cappuccino-option2",
-      "checkBoxName": "Cappuccino-ML-myCheckbox"
-    }, {
+      "checkBoxName": "Cappuccino-ML-myCheckbox",
+      "details": {
+        "calories": 57,
+        "totalFat": 1.8,
+        "cholesterol": 7.3,
+        "sodium": 64,
+        "totalCarbohydrate": 5.5,
+        "protein": 3.9,
+        "vitaminD": 2,
+        "cancium": 169
+      }
+    },
+    {
+      "id": "3",
       "name": "Moccachino",
       "price": 7.29,
       "quantity": "1",
       "size": "250",
       "sugar": "false",
-      "img": "assets/img/moccachino.jpg",
+      "img": "assets/img/moccachino.svg",
       "radioName": "Moccachino-ML",
       "radioId1": "Moccachino-option1",
       "radioId2": "Moccachino-option2",
-      "checkBoxName": "Moccachino-ML-myCheckbox"
+      "checkBoxName": "Moccachino-ML-myCheckbox",
+      "details": {
+        "calories": 73,
+        "totalFat": 4.3,
+        "cholesterol": 12.1,
+        "sodium": 31,
+        "totalCarbohydrate": 8.8,
+        "protein": 2.1,
+        "vitaminD": 2.2,
+        "cancium": 111
+      }
     }
   ]
 }

@@ -10,6 +10,7 @@ import {CounterService} from "./services/counter.service";
 import {HttpClientModule} from "@angular/common/http";
 import {CartService} from "./services/cart.service";
 import {ShopcartService} from "./services/shopcart.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ShopcartService} from "./services/shopcart.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule, HomeModule, ShopCartModule, FormsModule, HttpClientModule
+    CoreModule, HomeModule, ShopCartModule, FormsModule, HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [CounterService, CartService, ShopcartService],
   bootstrap: [AppComponent]
