@@ -158,7 +158,7 @@
 
 .coffee-catalog__item img {
   max-width: 285px;
-  width: 100%;
+  /*width: 100%;*/
   margin-bottom: 10px;
 }
 
