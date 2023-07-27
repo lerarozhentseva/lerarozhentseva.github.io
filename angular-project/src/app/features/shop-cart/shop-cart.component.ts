@@ -32,8 +32,13 @@ export class ShopCartComponent implements OnInit{
     this.cartProducts.forEach(product => {
       const name = product.name;
       const price = product.price;
-      const quantity = productsMap.get(name)?.quantity || 0;
-      productsMap.set(name, { name, price, quantity: quantity + 1 });
+      const quantity = product.quantity || 0;
+      const existingProduct = productsMap.get(name);
+      if (existingProduct) {
+        existingProduct.quantity += quantity;
+      } else {
+        productsMap.set(name, { name, price, quantity });
+      }
     });
 
     this.totalPrices = Array.from(productsMap.values()).map(item => {
@@ -41,6 +46,7 @@ export class ShopCartComponent implements OnInit{
       return { ...item, total };
     });
   }
+
 
   getTotalSumWithDelivery(): number {
     const totalSum = this.totalPrices.reduce((sum, item) => sum + item.total, 0);
@@ -56,8 +62,17 @@ export class ShopCartComponent implements OnInit{
 
   onCartItemIncremented(id: string) {
     const cartProduct = this.cartProducts.find((product) => product.id === id);
-    if (cartProduct) {
+    if (!cartProduct) {
       this.addItem(cartProduct);
+    } else {
+      const localStorageData = localStorage.getItem('cartItems');
+      const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
+      const productDetails = cartProducts.find((product: any) => product.id === id);
+      productDetails.quantity++;
+      console.log(productDetails);
+      localStorage.setItem('cartItems', JSON.stringify(cartProducts));
+      this.cartProducts = this.cartService.getCartItems();
+      this.calculateTotalPrices();
     }
   }
 

@@ -8,19 +8,18 @@ import {ShopcartService} from "../../../../services/shopcart.service";
 })
 export class CartItemComponent{
   @Input() productCart?: any;
-  inputItemsValue: number = 1;
   @Output() incrementEvent = new EventEmitter<string>();
   constructor(private shopcartService: ShopcartService) {}
 
-  onIncrementItems () {
-    this.inputItemsValue++;
+  onIncrementItems (id: string) {
+    this.productCart.quantity++;
     this.incrementEvent.emit(this.productCart?.id);
     this.shopcartService.itemAdded.next();
   }
 
   onDecrementItems (id: string) {
-    if(this.inputItemsValue > 0){
-      this.inputItemsValue--;
+    if(    this.productCart.quantity++ > 0){
+      this.productCart.quantity--;
       this.shopcartService.deleteCartItemById(id);
       this.shopcartService.itemDeleted.next(id);
     }
