@@ -4,12 +4,12 @@
   </h1>
   <div class="cart">
     <div class="cart__items">
-      <app-cart-item
-        *ngFor="let cartProduct of cartProducts"
-        [productCart]="cartProduct"
-        (decrementEvent)="onCartItemDecremented($event)"
-         (incrementEvent)="onCartItemIncremented($event)"
-      ></app-cart-item>
+        <app-cart-item
+          *ngFor="let cartProduct of cartProducts"
+          [productCart]="cartProduct"
+          (decrementEvent)="onCartItemDecremented($event)"
+           (incrementEvent)="onCartItemIncremented($event)"
+        ></app-cart-item>
     </div>
     <div class="checkout">
       <p>Checkout</p>

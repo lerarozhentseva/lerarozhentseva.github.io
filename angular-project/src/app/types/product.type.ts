@@ -1,13 +1,34 @@
 export interface IProduct {
+  id: string;
   name: string;
   img: string;
-  price: number;
   size: string;
   sugar: boolean;
-  rotateImg: string;
-  radioName: string;
-  radioId1: string;
-  radioId2: string;
-  checkBoxName: string;
-  id: string
+  stamp: boolean;
+  price: Price,
+  details: ProductDetails
 }
+
+export interface Price {
+  250: number,
+  500: number
+}
+
+export interface ProductDetails {
+  calories: number,
+  totalFat: number,
+  cholesterol: number,
+  sodium: number,
+  totalCarbohydrate: number,
+  protein: number,
+  vitaminD: number,
+  cancium: number
+}
+
+export interface SendProduct {
+  productId: string
+  size: string
+  sugar: boolean
+  quantity: number
+}
+

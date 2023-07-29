@@ -32,7 +32,7 @@ export class ShopCartComponent implements OnInit {
 
     this.cartProducts.forEach(product => {
       const name = product.name;
-      const price = product.price;
+      const price = product.price[product.size];
       const quantity = product.quantity || 0;
       const existingProduct = productsMap.get(name);
       if (existingProduct) {
@@ -66,8 +66,7 @@ export class ShopCartComponent implements OnInit {
     if (!cartProduct) {
       this.addItem(cartProduct);
     } else {
-      const localStorageData = localStorage.getItem('cartItems');
-      const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
+      const cartProducts = this.shopCartService.getCartItems();
       const productDetails = cartProducts.find((product: any) => product.id === id);
       productDetails.quantity++;
 
@@ -78,8 +77,7 @@ export class ShopCartComponent implements OnInit {
   }
 
   onCartItemDecremented(id: string) {
-    const localStorageData = localStorage.getItem('cartItems');
-    const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
+    const cartProducts = this.shopCartService.getCartItems();
     const productDetails = cartProducts.find((product: any) => product.id === id);
     productDetails.quantity--;
     this.shopCartService.addCartItemsToLocalStorage(cartProducts);
