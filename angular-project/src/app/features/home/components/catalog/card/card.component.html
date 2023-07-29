@@ -20,7 +20,7 @@
     <label [for]="product?.checkBoxName" class="checkbox-label">add sugar</label>
   </div>
   <div class="btn-group">
-    <app-button textBtn="add to cart" (click)="getItem(product)"></app-button>
+    <app-button textBtn="add to cart" (click)="addToCart(product)"></app-button>
     <button type="button" class="info-btn" (click)="openPopup()">i</button>
     <aside id="popup" *ngIf="isPopupOpen" [@fadeInOut] class="popup">
       <div class="popup-info">

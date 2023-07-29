@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit {
     this.cartUpdateService.itemDeleted.subscribe((id: string) => {
       this.updateTotalCountOnItemDeleted(id);
     });
+
+    this.cartUpdateService.itemUpdated.subscribe(() => {
+      this.getTotalCount();
+    });
   }
 
   getTotalCount() {
@@ -43,4 +47,6 @@ export class HeaderComponent implements OnInit {
     this.cartUpdateService.deleteCartItemById(id);
     this.getTotalCount();
   }
+
+
 }

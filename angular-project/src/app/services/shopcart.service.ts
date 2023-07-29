@@ -8,6 +8,7 @@ import {Subject} from "rxjs";
 export class ShopcartService {
   itemDeleted = new Subject<string>();
   itemAdded: EventEmitter<void> = new EventEmitter<void>();
+  itemUpdated: EventEmitter<void> = new EventEmitter<void>();
 
   getCartItems(): any[] {
     const localStorageData = localStorage.getItem('cartItems');

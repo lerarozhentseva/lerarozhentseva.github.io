@@ -16,6 +16,7 @@ export class CartItemComponent{
     this.productCart.quantity++;
     this.incrementEvent.emit(this.productCart?.id);
     this.shopcartService.itemAdded.next();
+    this.shopcartService.itemUpdated.next();
   }
 
   onDecrementItems (id: string) {
@@ -27,6 +28,7 @@ export class CartItemComponent{
         this.shopcartService.itemDeleted.next(id);
       }
     }
+    this.shopcartService.itemUpdated.next();
   }
 
   onDeleteItem(id: string) {

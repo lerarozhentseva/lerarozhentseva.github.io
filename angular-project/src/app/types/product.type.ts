@@ -2,6 +2,8 @@ export interface IProduct {
   name: string;
   img: string;
   price: number;
+  size: string;
+  sugar: boolean;
   rotateImg: string;
   radioName: string;
   radioId1: string;

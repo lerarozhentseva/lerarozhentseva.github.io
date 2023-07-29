@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CartService} from "../../../../../services/cart.service";
 import {ShopcartService} from "../../../../../services/shopcart.service";
 import {trigger, state, style, animate, transition} from '@angular/animations';
+import {IProduct} from "../../../../../types/product.type";
 
 @Component({
   selector: 'app-card',
@@ -30,13 +31,18 @@ export class CardComponent implements OnInit {
     this.cartProducts = this.shopCartService.getCartItems();
   }
 
-  public getItem(cardProduct: any) {
-    const cartProduct = this.cartProducts.find((product) => product.name === cardProduct.name);
-    console.log(this.cartProducts);
-
-    if (!cartProduct) {
+  public addToCart(cardProduct: IProduct) {
+    // const cartProductIndex = this.cartProducts.findIndex((product: IProduct) => product.name === cardProduct.name
+    //   && product.size === cardProduct.size && product.sugar === cardProduct.sugar);
+    // const cartProductIndex = this.cartProducts.findIndex((product: IProduct) => product.name === cardProduct.name);
+    const cartProductIndex = this.cartProducts.findIndex((product: IProduct) =>
+      product.name === cardProduct.name &&
+      product.size === this.radioValue &&
+      product.sugar === this.checkBoxValue
+    );
+    if (cartProductIndex === -1) {
       const uniqueId = crypto.randomUUID();
-      let object = {
+      const newCartItem = {
         name: cardProduct.name,
         price: cardProduct.price,
         size: this.radioValue,
@@ -46,22 +52,16 @@ export class CardComponent implements OnInit {
         id: uniqueId
       };
 
-      let cartItems = [];
-      const localStorageData = localStorage.getItem('cartItems');
-      if (localStorageData) {
-        cartItems = JSON.parse(localStorageData);
-      }
-      if (object.size) {
-        cartItems.push(object);
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        this.cartService.itemAdded.next();
-      }
-    } else {
-      cartProduct.quantity++;
+      this.cartProducts.push(newCartItem);
       localStorage.setItem('cartItems', JSON.stringify(this.cartProducts));
-      this.cartProducts = this.shopCartService.getCartItems();
+      this.cartService.itemAdded.next();
+    } else {
+      this.cartProducts[cartProductIndex].quantity++;
+      localStorage.setItem('cartItems', JSON.stringify(this.cartProducts));
+      this.cartService.itemAdded.next();
     }
   }
+
 
   isPopupOpen = false;
 
