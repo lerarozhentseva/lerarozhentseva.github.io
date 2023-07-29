@@ -17,14 +17,18 @@ import {IProduct} from "../../../../../types/product.type";
 })
 
 export class CardComponent implements OnInit {
-  cartProducts: any[] = [];
   @Input() product?: any;
+  cartProducts: any[] = [];
   radioValue: string = '250';
   checkBoxValue: boolean = false;
+  isPopupOpen = false;
 
   @Output() itemAdded = new EventEmitter<void>();
 
-  constructor(private cartService: CartService, private shopCartService: ShopcartService) {
+  constructor(
+    private cartService: CartService,
+    private shopCartService: ShopcartService
+  ) {
   }
 
   ngOnInit() {
@@ -32,9 +36,6 @@ export class CardComponent implements OnInit {
   }
 
   public addToCart(cardProduct: IProduct) {
-    // const cartProductIndex = this.cartProducts.findIndex((product: IProduct) => product.name === cardProduct.name
-    //   && product.size === cardProduct.size && product.sugar === cardProduct.sugar);
-    // const cartProductIndex = this.cartProducts.findIndex((product: IProduct) => product.name === cardProduct.name);
     const cartProductIndex = this.cartProducts.findIndex((product: IProduct) =>
       product.name === cardProduct.name &&
       product.size === this.radioValue &&
@@ -53,17 +54,14 @@ export class CardComponent implements OnInit {
       };
 
       this.cartProducts.push(newCartItem);
-      localStorage.setItem('cartItems', JSON.stringify(this.cartProducts));
+      this.shopCartService.addCartItemsToLocalStorage(this.cartProducts);
       this.cartService.itemAdded.next();
     } else {
       this.cartProducts[cartProductIndex].quantity++;
-      localStorage.setItem('cartItems', JSON.stringify(this.cartProducts));
+      this.shopCartService.addCartItemsToLocalStorage(this.cartProducts);
       this.cartService.itemAdded.next();
     }
   }
-
-
-  isPopupOpen = false;
 
   openPopup() {
     this.isPopupOpen = true;

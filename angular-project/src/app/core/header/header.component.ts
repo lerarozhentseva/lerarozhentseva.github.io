@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from "../../services/cart.service";
-import {CounterService} from "../../services/counter.service";
 import {ShopcartService} from "../../services/shopcart.service";
 
 @Component({
@@ -11,8 +10,10 @@ import {ShopcartService} from "../../services/shopcart.service";
 
 export class HeaderComponent implements OnInit {
   public totalCountOfItems: number = 0;
-  constructor(private cartService: CartService, private counterService: CounterService,
-              private cartUpdateService: ShopcartService) {}
+  constructor(
+    private cartService: CartService,
+    private shopCartService: ShopcartService
+  ) {}
 
   ngOnInit() {
     this.getTotalCount();
@@ -20,23 +21,17 @@ export class HeaderComponent implements OnInit {
       this.getTotalCount();
     });
 
-    this.cartUpdateService.itemDeleted.subscribe((id: string) => {
+    this.shopCartService.itemDeleted.subscribe((id: string) => {
       this.updateTotalCountOnItemDeleted(id);
     });
 
-    this.cartUpdateService.itemUpdated.subscribe(() => {
+    this.shopCartService.itemUpdated.subscribe(() => {
       this.getTotalCount();
     });
   }
 
   getTotalCount() {
-    const localStorageData = localStorage.getItem('cartItems');
-    let cartItems: any[];
-    try {
-      cartItems = JSON.parse(localStorageData ?? '[]');
-    } catch (error) {
-      cartItems = [];
-    }
+    const cartItems = this.shopCartService.getCartItems();
     this.totalCountOfItems = cartItems.reduce((total: number, item: any) => {
       const itemQuantity = parseInt(item.quantity, 10);
       return isNaN(itemQuantity) ? total : total + itemQuantity;
@@ -44,9 +39,7 @@ export class HeaderComponent implements OnInit {
   }
 
   updateTotalCountOnItemDeleted(id: string) {
-    this.cartUpdateService.deleteCartItemById(id);
+    this.shopCartService.deleteCartItemById(id);
     this.getTotalCount();
   }
-
-
 }

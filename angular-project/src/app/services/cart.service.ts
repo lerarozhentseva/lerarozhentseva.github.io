@@ -10,6 +10,7 @@ import {HttpClient} from "@angular/common/http";
 export class CartService {
   itemAdded: Subject<void> = new Subject<void>();
   public products: IProduct[] | undefined;
+
   constructor(private http: HttpClient) {}
 
   fetchProducts(): Observable<{products: IProduct[]}> {

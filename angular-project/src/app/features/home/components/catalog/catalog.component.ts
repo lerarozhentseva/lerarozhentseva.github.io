@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 
 export class CatalogComponent {
-  public products: IProduct[] | undefined;
+  public products?: IProduct[];
 
   constructor(private service: CartService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((value) => {

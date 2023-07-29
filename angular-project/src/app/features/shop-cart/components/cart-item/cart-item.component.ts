@@ -10,13 +10,14 @@ export class CartItemComponent{
   @Input() productCart?: any;
   @Output() incrementEvent = new EventEmitter<string>();
   @Output() decrementEvent = new EventEmitter<string>();
-  constructor(private shopcartService: ShopcartService) {}
 
-  onIncrementItems (id: string) {
+  constructor(private shopCartService: ShopcartService) {}
+
+  onIncrementItems () {
     this.productCart.quantity++;
     this.incrementEvent.emit(this.productCart?.id);
-    this.shopcartService.itemAdded.next();
-    this.shopcartService.itemUpdated.next();
+    this.shopCartService.itemAdded.next();
+    this.shopCartService.itemUpdated.next();
   }
 
   onDecrementItems (id: string) {
@@ -24,15 +25,15 @@ export class CartItemComponent{
       this.productCart.quantity--;
       this.decrementEvent.emit(this.productCart?.id);
       if (this.productCart.quantity === 0) {
-        this.shopcartService.deleteCartItemById(id);
-        this.shopcartService.itemDeleted.next(id);
+        this.shopCartService.deleteCartItemById(id);
+        this.shopCartService.itemDeleted.next(id);
       }
     }
-    this.shopcartService.itemUpdated.next();
+    this.shopCartService.itemUpdated.next();
   }
 
   onDeleteItem(id: string) {
-    this.shopcartService.deleteCartItemById(id);
-    this.shopcartService.itemDeleted.next(id);
+    this.shopCartService.deleteCartItemById(id);
+    this.shopCartService.itemDeleted.next(id);
   }
 }

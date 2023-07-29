@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ShopcartService} from "../../services/shopcart.service";
-import {CounterService} from "../../services/counter.service";
 
 @Component({
   selector: 'app-shop-cart',
@@ -8,20 +7,22 @@ import {CounterService} from "../../services/counter.service";
   styleUrls: ['./shop-cart.component.css'],
 })
 
-export class ShopCartComponent implements OnInit{
+export class ShopCartComponent implements OnInit {
   cartProducts: any[] = [];
   totalPrices: any[] = [];
-  constructor(private cartService: ShopcartService) {}
   customButtonClass = 'custom-button';
 
+  constructor(private shopCartService: ShopcartService) {
+  }
+
   ngOnInit() {
-    this.cartProducts = this.cartService.getCartItems();
+    this.cartProducts = this.shopCartService.getCartItems();
     this.calculateTotalPrices();
-    this.cartService.itemDeleted.subscribe((id: string) => {
+    this.shopCartService.itemDeleted.subscribe((id: string) => {
       this.onCartItemDeleted(id);
     });
-    this.cartService.itemAdded.subscribe(() => {
-      this.cartProducts = this.cartService.getCartItems();
+    this.shopCartService.itemAdded.subscribe(() => {
+      this.cartProducts = this.shopCartService.getCartItems();
       this.calculateTotalPrices();
     });
   }
@@ -37,13 +38,13 @@ export class ShopCartComponent implements OnInit{
       if (existingProduct) {
         existingProduct.quantity += quantity;
       } else {
-        productsMap.set(name, { name, price, quantity });
+        productsMap.set(name, {name, price, quantity});
       }
     });
 
-    this.totalPrices = Array.from(productsMap.values()).map(item => {
+    this.totalPrices = [...productsMap.values()].map(item => {
       const total = item.price * item.quantity;
-      return { ...item, total };
+      return {...item, total};
     });
   }
 
@@ -55,8 +56,8 @@ export class ShopCartComponent implements OnInit{
   }
 
   onCartItemDeleted(id: string) {
-    this.cartService.deleteCartItemById(id);
-    this.cartProducts = this.cartService.getCartItems();
+    this.shopCartService.deleteCartItemById(id);
+    this.cartProducts = this.shopCartService.getCartItems();
     this.calculateTotalPrices();
   }
 
@@ -69,22 +70,22 @@ export class ShopCartComponent implements OnInit{
       const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
       const productDetails = cartProducts.find((product: any) => product.id === id);
       productDetails.quantity++;
-      console.log(productDetails);
-      localStorage.setItem('cartItems', JSON.stringify(cartProducts));
-      this.cartProducts = this.cartService.getCartItems();
+
+      this.shopCartService.addCartItemsToLocalStorage(cartProducts);
+      this.cartProducts = this.shopCartService.getCartItems();
       this.calculateTotalPrices();
     }
   }
 
   onCartItemDecremented(id: string) {
-      const localStorageData = localStorage.getItem('cartItems');
-      const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
-      const productDetails = cartProducts.find((product: any) => product.id === id);
-      productDetails.quantity--;
-      console.log(productDetails);
-      localStorage.setItem('cartItems', JSON.stringify(cartProducts));
-      this.cartProducts = this.cartService.getCartItems();
-      this.calculateTotalPrices();
+    const localStorageData = localStorage.getItem('cartItems');
+    const cartProducts = localStorageData ? JSON.parse(localStorageData) : [];
+    const productDetails = cartProducts.find((product: any) => product.id === id);
+    productDetails.quantity--;
+    this.shopCartService.addCartItemsToLocalStorage(cartProducts);
+
+    this.cartProducts = this.shopCartService.getCartItems();
+    this.calculateTotalPrices();
   }
 
   addItem(product: any) {
@@ -99,15 +100,12 @@ export class ShopCartComponent implements OnInit{
       id: uniqueId
     };
 
-    let cartItems = [];
-    const localStorageData = localStorage.getItem('cartItems');
-    if (localStorageData) {
-      cartItems = JSON.parse(localStorageData);
-    }
+    const cartItems = this.shopCartService.getCartItems();
+
     if (object.size) {
       cartItems.push(object);
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-      this.cartService.itemAdded.next();
+      this.shopCartService.addCartItemsToLocalStorage(cartItems);
+      this.shopCartService.itemAdded.next();
     }
   }
 }

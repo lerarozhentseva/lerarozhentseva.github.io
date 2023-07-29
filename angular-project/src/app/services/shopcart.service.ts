@@ -10,12 +10,16 @@ export class ShopcartService {
   itemAdded: EventEmitter<void> = new EventEmitter<void>();
   itemUpdated: EventEmitter<void> = new EventEmitter<void>();
 
+  constructor(private counterService: CounterService) { };
+
   getCartItems(): any[] {
     const localStorageData = localStorage.getItem('cartItems');
     return localStorageData ? JSON.parse(localStorageData) : [];
   }
 
-  constructor(private counterService: CounterService) { };
+  addCartItemsToLocalStorage(cartProducts: any) {
+    localStorage.setItem('cartItems', JSON.stringify(cartProducts));
+  }
 
   deleteCartItemById(id: string) {
     let cartItems = this.getCartItems();
