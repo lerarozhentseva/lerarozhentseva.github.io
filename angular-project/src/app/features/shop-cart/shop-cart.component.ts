@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ShopcartService} from "../../services/shopcart.service";
+import {ShopCartService} from "../../services/shop-cart.service";
 
 @Component({
   selector: 'app-shop-cart',
@@ -11,7 +11,7 @@ export class ShopCartComponent implements OnInit {
   cartProducts: any[] = [];
   totalPrices: any[] = [];
 
-  constructor(private shopCartService: ShopcartService) {
+  constructor(private shopCartService: ShopCartService) {
   }
 
   ngOnInit() {

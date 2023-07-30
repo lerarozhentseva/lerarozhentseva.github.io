@@ -5,7 +5,7 @@ import {Subject} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class ShopcartService {
+export class ShopCartService {
   itemDeleted = new Subject<string>();
   itemAdded: EventEmitter<void> = new EventEmitter<void>();
   itemUpdated: EventEmitter<void> = new EventEmitter<void>();

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {CartService} from "../../services/cart.service";
-import {ShopcartService} from "../../services/shopcart.service";
+import {GetItemsService} from "../../services/get-items.service";
+import {ShopCartService} from "../../services/shop-cart.service";
 
 @Component({
   selector: 'app-header',
@@ -11,8 +11,8 @@ import {ShopcartService} from "../../services/shopcart.service";
 export class HeaderComponent implements OnInit {
   public totalCountOfItems: number = 0;
   constructor(
-    private cartService: CartService,
-    private shopCartService: ShopcartService
+    private cartService: GetItemsService,
+    private shopCartService: ShopCartService
   ) {}
 
   ngOnInit() {

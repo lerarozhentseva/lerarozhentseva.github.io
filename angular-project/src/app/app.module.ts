@@ -8,8 +8,8 @@ import {ShopCartModule} from "./features/shop-cart/shop-cart.module";
 import {FormsModule} from "@angular/forms";
 import {CounterService} from "./services/counter.service";
 import {HttpClientModule} from "@angular/common/http";
-import {CartService} from "./services/cart.service";
-import {ShopcartService} from "./services/shopcart.service";
+import {GetItemsService} from "./services/get-items.service";
+import {ShopCartService} from "./services/shop-cart.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
@@ -22,7 +22,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     CoreModule, HomeModule, ShopCartModule, FormsModule, HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [CounterService, CartService, ShopcartService],
+  providers: [CounterService, GetItemsService, ShopCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

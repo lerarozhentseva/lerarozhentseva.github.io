@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 
-export class CartService {
+export class GetItemsService {
   itemAdded: Subject<void> = new Subject<void>();
   public products: IProduct[] | undefined;
 

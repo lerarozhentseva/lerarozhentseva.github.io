@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {CartService} from "../../../../../services/cart.service";
-import {ShopcartService} from "../../../../../services/shopcart.service";
+import {GetItemsService} from "../../../../../services/get-items.service";
+import {ShopCartService} from "../../../../../services/shop-cart.service";
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {IProduct} from "../../../../../types/product.type";
 
@@ -26,8 +26,8 @@ export class CardComponent implements OnInit {
   @Output() itemAdded = new EventEmitter<void>();
 
   constructor(
-    private cartService: CartService,
-    private shopCartService: ShopcartService
+    private cartService: GetItemsService,
+    private shopCartService: ShopCartService
   ) {
   }
 

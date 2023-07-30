@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IProduct} from "../../../../types/product.type";
-import {CartService} from "../../../../services/cart.service";
+import {GetItemsService} from "../../../../services/get-items.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -12,7 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 export class CatalogComponent {
   public products?: IProduct[];
 
-  constructor(private service: CartService, private activatedRoute: ActivatedRoute) {
+  constructor(private service: GetItemsService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((value) => {
       this.service.products = value['products'].products;
       this.products = this.service.products;

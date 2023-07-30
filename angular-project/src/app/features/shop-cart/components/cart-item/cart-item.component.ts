@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ShopcartService} from "../../../../services/shopcart.service";
+import {ShopCartService} from "../../../../services/shop-cart.service";
 
 @Component({
   selector: 'app-cart-item',
@@ -11,7 +11,7 @@ export class CartItemComponent{
   @Output() incrementEvent = new EventEmitter<string>();
   @Output() decrementEvent = new EventEmitter<string>();
 
-  constructor(private shopCartService: ShopcartService) {
+  constructor(private shopCartService: ShopCartService) {
   }
 
   onIncrementItems () {
