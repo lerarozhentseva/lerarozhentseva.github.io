@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Extra Latte",
+      "img": "assets/img/latte.svg",
+      "price": {
+        "250": 6.99,
+        "500": 8.99
+      },
+      "stamp": true,
+      "details": {
+        "calories": 65,
+        "totalFat": 2.4,
+        "cholesterol": 9.6,
+        "sodium": 55,
+        "totalCarbohydrate": 6.8,
+        "protein": 4.2,
+        "vitaminD": 1.4,
+        "cancium": 158
+      }
+    },
+    {
+      "id": "2",
+      "name": "Cappuccino",
+      "img": "assets/img/cappuccino.svg",
+      "price": {
+        "250": 7.99,
+        "500": 9.99
+      },
+      "stamp": false,
+      "details": {
+        "calories": 57,
+        "totalFat": 1.8,
+        "cholesterol": 7.3,
+        "sodium": 64,
+        "totalCarbohydrate": 5.5,
+        "protein": 3.9,
+        "vitaminD": 2,
+        "cancium": 169
+      }
+    },
+    {
+      "id": "3",
+      "name": "Moccachino",
+      "img": "assets/img/moccachino.svg",
+      "price": {
+        "250": 5.29,
+        "500": 7.29
+      },
+      "stamp": false,
+      "details": {
+        "calories": 73,
+        "totalFat": 4.3,
+        "cholesterol": 12.1,
+        "sodium": 31,
+        "totalCarbohydrate": 8.8,
+        "protein": 2.1,
+        "vitaminD": 2.2,
+        "cancium": 111
+      }
+    }
+  ]
+}

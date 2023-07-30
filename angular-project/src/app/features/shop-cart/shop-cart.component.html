@@ -1,0 +1,31 @@
+<section class="main-container">
+  <h1 class="main-container__title">
+    Shopping Cart
+  </h1>
+  <div class="cart">
+    <div class="cart__items">
+        <app-cart-item
+          *ngFor="let cartProduct of cartProducts"
+          [productCart]="cartProduct"
+          (decrementEvent)="onCartItemDecremented($event)"
+           (incrementEvent)="onCartItemIncremented($event)"
+        ></app-cart-item>
+    </div>
+    <div class="checkout">
+      <p>Checkout</p>
+      <div class="checkout__prices" *ngFor="let item of totalPrices">
+        <ul class="checkout-prices__value">
+          <li>{{ item?.name }}</li>
+        </ul>
+        <ul class="checkout-prices__price">
+          <li>{{item?.quantity}}X {{item?.price | currency }}</li>
+        </ul>
+      </div>
+      <ul class="checkout__delivery">
+        <li>Delivery</li>
+        <li>{{ getTotalSumWithDelivery() | currency }}</li>
+      </ul>
+      <app-button textBtn="to pay"></app-button>
+    </div>
+  </div>
+</section>

@@ -1,3 +1,3 @@
 # Deploy on Netlify
 
-https://friendly-taffy-0c6234.netlify.app/
+https://friendly-taffy-0c6234.netlify.app/ - coffee catalog

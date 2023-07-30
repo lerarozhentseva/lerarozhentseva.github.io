@@ -1,0 +1,26 @@
+.add-to-cart-btn {
+  height: 48px;
+  padding: 16px 24px;
+  border-radius: 64px;
+  border: 2px solid #FFBD5C;
+  color: #023A6B;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  color: #023A6B;
+  background-color: #FFBD5C;
+}
+
+.add-to-cart-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}

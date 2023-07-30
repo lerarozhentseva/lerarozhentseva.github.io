@@ -1,0 +1,52 @@
+<div class="coffee-catalog__item">
+  <img [src]="product?.img" alt="coffee-image" class="coffee-catalog-item__image latte-image">
+  <div *ngIf="product?.stamp">
+    <img src="/assets/icons/rotate-arabic.svg" alt="rotate" class="coffee-catalog-item__image rotate">
+  </div>
+  <div class="item-info">
+    <h2 class="item-info__name">{{ product?.name }}</h2>
+    <div *ngIf="radioValue === '250'" class="item-info__price">${{ product?.price["250"] }}</div>
+    <div *ngIf="radioValue === '500'" class="item-info__price">${{ product?.price["500"] }}</div>
+  </div>
+
+  <div class="coffee-catalog__radio-group">
+    <input type="radio" [id]="product?.id" [name]="'radio_' + product?.id" class="radio-input" value="250" [(ngModel)]="radioValue" [checked]="product.radioValue === '250'">
+    <label [for]="product?.id" class="radio-label">250ML</label>
+
+    <input type="radio" [id]="product?.id + 1" [name]="'radio_' + product?.id"  class="radio-input" value="500" [(ngModel)]="radioValue" [checked]="product.radioValue === '500'">
+    <label [for]="product?.id + 1" class="radio-label">500ML</label>
+  </div>
+  <div class="checkbox-group">
+    <input [(ngModel)]="checkBoxValue"  [id]="'sugar_' + product?.id" type="checkbox" class="checkbox-input">
+    <label [for]="'sugar_' + product?.id" class="checkbox-label">add sugar</label>
+  </div>
+  <div class="btn-group">
+    <app-button textBtn="add to cart" (click)="addToCart(product)"></app-button>
+    <button type="button" class="info-btn" (click)="openPopup()">i</button>
+    <aside id="popup" *ngIf="isPopupOpen" [@fadeInOut] class="popup">
+      <div class="popup-info">
+        <div class="popup-info__item">
+          <h2>{{ product?.name }}</h2>
+          <div *ngIf="radioValue === '250'">${{ product?.price["250"] }}</div>
+          <div *ngIf="radioValue === '500'">${{ product?.price["500"] }}</div>
+        </div>
+        <img [src]="product?.img" alt="coffee">
+        <div class="line"></div>
+        <ul>
+          <li *ngFor="let detail of getRegularDetails()">
+            <h4>{{ detail.key }}</h4>
+            <p>{{ detail.value }}</p>
+          </li>
+        </ul>
+        <div class="line"></div>
+        <ul>
+          <li *ngFor="let detail of getLastTwoDetails()">
+            <h4>{{ detail.key }}</h4>
+            <p>{{ detail.value }}mcg</p>
+          </li>
+        </ul>
+        <app-button textBtn="Cool, got it" (click)="closePopup()"></app-button>
+      </div>
+    </aside>
+    </div>
+</div>
