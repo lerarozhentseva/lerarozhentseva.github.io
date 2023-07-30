@@ -24,7 +24,6 @@
     <app-button textBtn="add to cart" (click)="addToCart(product)"></app-button>
     <button type="button" class="info-btn" (click)="openPopup()">i</button>
     <aside id="popup" *ngIf="isPopupOpen" [@fadeInOut] class="popup">
-      <!-- Popup content with the dynamically selected price -->
       <div class="popup-info">
         <div class="popup-info__item">
           <h2>{{ product?.name }}</h2>

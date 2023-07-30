@@ -24,11 +24,3 @@ export interface ProductDetails {
   vitaminD: number,
   cancium: number
 }
-
-// export interface SendProduct {
-//   productId: string
-//   size: string
-//   sugar: boolean
-//   quantity: number
-// }
-

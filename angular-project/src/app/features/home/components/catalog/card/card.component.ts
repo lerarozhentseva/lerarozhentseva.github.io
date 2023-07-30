@@ -53,10 +53,12 @@ export class CardComponent implements OnInit {
         id: uniqueId
       };
 
+      this.cartProducts = this.shopCartService.getCartItems();
       this.cartProducts.push(newCartItem);
       this.shopCartService.addCartItemsToLocalStorage(this.cartProducts);
       this.cartService.itemAdded.next();
     } else {
+      this.cartProducts = this.shopCartService.getCartItems();
       this.cartProducts[cartProductIndex].quantity++;
       this.shopCartService.addCartItemsToLocalStorage(this.cartProducts);
       this.cartService.itemAdded.next();
