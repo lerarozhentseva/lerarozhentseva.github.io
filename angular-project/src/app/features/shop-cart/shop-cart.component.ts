@@ -10,8 +10,6 @@ import {ShopcartService} from "../../services/shopcart.service";
 export class ShopCartComponent implements OnInit {
   cartProducts: any[] = [];
   totalPrices: any[] = [];
-  customButtonClass = 'custom-button';
-
   constructor(private shopCartService: ShopcartService) {
   }
 
@@ -29,16 +27,17 @@ export class ShopCartComponent implements OnInit {
 
   calculateTotalPrices() {
     const productsMap = new Map<string, any>();
-
     this.cartProducts.forEach(product => {
+      const size = product.size;
       const name = product.name;
-      const price = product.price[product.size];
+      const price = product.price[size];
+      const sugar = product.sugar;
       const quantity = product.quantity || 0;
       const existingProduct = productsMap.get(name);
       if (existingProduct) {
         existingProduct.quantity += quantity;
       } else {
-        productsMap.set(name, {name, price, quantity});
+        productsMap.set(name+size+sugar, {name, price, quantity});
       }
     });
 

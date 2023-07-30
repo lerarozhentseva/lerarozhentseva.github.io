@@ -25,10 +25,10 @@ export interface ProductDetails {
   cancium: number
 }
 
-export interface SendProduct {
-  productId: string
-  size: string
-  sugar: boolean
-  quantity: number
-}
+// export interface SendProduct {
+//   productId: string
+//   size: string
+//   sugar: boolean
+//   quantity: number
+// }
 

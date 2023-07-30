@@ -11,8 +11,4 @@ export class CounterService {
     this.counter = count;
     this.counterChange.emit(this.counter);
   }
-
-  getCounter(): number {
-    return this.counter;
-  }
 }

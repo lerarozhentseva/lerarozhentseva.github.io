@@ -11,7 +11,8 @@ export class CartItemComponent{
   @Output() incrementEvent = new EventEmitter<string>();
   @Output() decrementEvent = new EventEmitter<string>();
 
-  constructor(private shopCartService: ShopcartService) {}
+  constructor(private shopCartService: ShopcartService) {
+  }
 
   onIncrementItems () {
     this.productCart.quantity++;
