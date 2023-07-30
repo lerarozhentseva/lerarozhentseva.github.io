@@ -10,6 +10,7 @@ import {ShopcartService} from "../../services/shopcart.service";
 export class ShopCartComponent implements OnInit {
   cartProducts: any[] = [];
   totalPrices: any[] = [];
+
   constructor(private shopCartService: ShopcartService) {
   }
 
@@ -37,7 +38,7 @@ export class ShopCartComponent implements OnInit {
       if (existingProduct) {
         existingProduct.quantity += quantity;
       } else {
-        productsMap.set(name+size+sugar, {name, price, quantity});
+        productsMap.set(name + size + sugar, {name, price, quantity});
       }
     });
 
@@ -61,18 +62,13 @@ export class ShopCartComponent implements OnInit {
   }
 
   onCartItemIncremented(id: string) {
-    const cartProduct = this.cartProducts.find((product) => product.id === id);
-    if (!cartProduct) {
-      this.addItem(cartProduct);
-    } else {
-      const cartProducts = this.shopCartService.getCartItems();
-      const productDetails = cartProducts.find((product: any) => product.id === id);
-      productDetails.quantity++;
+    const cartProducts = this.shopCartService.getCartItems();
+    const productDetails = cartProducts.find((product: any) => product.id === id);
+    productDetails.quantity++;
 
-      this.shopCartService.addCartItemsToLocalStorage(cartProducts);
-      this.cartProducts = this.shopCartService.getCartItems();
-      this.calculateTotalPrices();
-    }
+    this.shopCartService.addCartItemsToLocalStorage(cartProducts);
+    this.cartProducts = this.shopCartService.getCartItems();
+    this.calculateTotalPrices();
   }
 
   onCartItemDecremented(id: string) {
@@ -83,26 +79,5 @@ export class ShopCartComponent implements OnInit {
 
     this.cartProducts = this.shopCartService.getCartItems();
     this.calculateTotalPrices();
-  }
-
-  addItem(product: any) {
-    const uniqueId = crypto.randomUUID();
-    let object = {
-      name: product.name,
-      price: product.price,
-      size: product.size,
-      quantity: 1,
-      sugar: product.sugar,
-      img: product.img,
-      id: uniqueId
-    };
-
-    const cartItems = this.shopCartService.getCartItems();
-
-    if (object.size) {
-      cartItems.push(object);
-      this.shopCartService.addCartItemsToLocalStorage(cartItems);
-      this.shopCartService.itemAdded.next();
-    }
   }
 }
